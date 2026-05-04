@@ -1,0 +1,22 @@
+[global]
+    origin = top-right
+    offset = 10x30
+    width = 300
+    height = 100
+    padding = 10
+    font = Monospace 10
+    corner_radius = 10
+    audio_backend = command
+
+[urgency_low]
+    timeout = 5
+
+[urgency_normal]
+    timeout = 5
+
+[urgency_critical]
+    timeout = 0
+
+[script]
+    summary = "*"
+    script = ~/.local/bin/notif-sound

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+i3lock  -i ~/Pictures/fondo3.png

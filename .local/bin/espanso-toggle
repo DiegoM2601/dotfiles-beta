@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if pgrep -x "espanso" > /dev/null
+then
+    espanso stop
+    notify-send -u normal -i input-keyboard "Espanso" "Servicio detenido correctamente"
+else
+    espanso start --unmanaged
+fi

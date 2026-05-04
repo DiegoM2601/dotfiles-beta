@@ -1,0 +1,27 @@
+#!/bin/bash
+BAT=$(ls /sys/class/power_supply/ | grep -i bat | head -1)
+
+if [ -z "$BAT" ]; then
+    exit 0
+fi
+
+capacity=$(cat /sys/class/power_supply/$BAT/capacity)
+status=$(cat /sys/class/power_supply/$BAT/status)
+
+if [ "$status" = "Charging" ]; then
+    icon="󰂄"
+elif [ "$capacity" -ge 90 ]; then
+    icon="󰁹"
+elif [ "$capacity" -ge 70 ]; then
+    icon="󰂀"
+elif [ "$capacity" -ge 50 ]; then
+    icon="󰁾"
+elif [ "$capacity" -ge 30 ]; then
+    icon="󰁼"
+elif [ "$capacity" -ge 10 ]; then
+    icon="󰁺"
+else
+    icon="󰂃"
+fi
+
+echo "${icon} ${capacity}%"

@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Toggle apagado automático de pantalla
+# - Deshabilitado: la pantalla nunca se apaga sola
+# - Habilitado: la pantalla se apaga a los 10 minutos
+
+STATUS=$(xset q | grep -c "DPMS is Enabled")
+
+if [ "$STATUS" -eq 1 ]; then
+    # Deshabilitar DPMS y screensaver
+    xset s off
+    xset s noblank
+    xset -dpms
+    notify-send -i display "Pantalla" "Apagado automático DESHABILITADO"
+else
+    # Habilitar DPMS a 10 minutos
+    xset s 600 600
+    xset s noblank
+    xset dpms 600 600 600
+    notify-send -i display "Pantalla" "Apagado automático a 10 minutos"
+fi

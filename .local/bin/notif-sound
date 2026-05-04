@@ -1,0 +1,2 @@
+#!/bin/bash
+paplay ~/.local/share/sounds/notif-1.oga

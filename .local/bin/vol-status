@@ -1,0 +1,14 @@
+#!/bin/bash
+muted=$(pamixer --get-mute)
+vol=$(pamixer --get-volume)
+if [ "$muted" = "true" ]; then
+    echo "󰝟 mute"
+else
+    if [ "$vol" -lt 30 ]; then
+        echo "󰕿 ${vol}%"
+    elif [ "$vol" -lt 70 ]; then
+        echo "󰖀 ${vol}%"
+    else
+        echo "󰕾 ${vol}%"
+    fi
+fi

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Crear la carpeta si no existe
+mkdir -p ~/Pictures
+
+# Generar nombre con fecha y hora
+filename="$(date +%d-%m-%Y_%H-%M-%S-%3N).png"
+filepath="$HOME/Pictures/$filename"
+
+# Tomar la captura y guardarla directamente
+flameshot full --clipboard -r | tee "$filepath" >/dev/null
