@@ -7,3 +7,4 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 
 alias psg='ps aux | grep -i'
+alias kvm-res='xrandr --output Virtual-1 --auto'
