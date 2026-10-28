@@ -1,5 +1,5 @@
 alias nts='cd ~/myhome/vaults/notas-programacion'
-alias ls='eza -la'
+alias ls='eza -lah --icons=auto --group-directories-first --header --git'
 alias apagar='sudo shutdown -h now'
 
 alias ..='cd ..'
